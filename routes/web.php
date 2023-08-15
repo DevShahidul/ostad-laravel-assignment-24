@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth.user'])->group(function () {
     Route::resource('events', EventController::class);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
